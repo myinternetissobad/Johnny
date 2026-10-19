@@ -128,7 +128,29 @@ $$('.build-part').forEach((part) => part.addEventListener('dragstart', (event) =
 $$('.part-target').forEach((target) => { target.addEventListener('dragover', (event) => event.preventDefault()); target.addEventListener('drop', (event) => { event.preventDefault(); const part = $(`.build-part[data-part="${target.dataset.target}"]`); if (part) attachPart(part); }); });
 
 const dog = $('#dog-tap');
-dog.addEventListener('click', () => { const thought = $('#thought'); thought.textContent = ['Woof!', 'I packed snacks!', 'To Mars!'][Math.floor(Math.random() * 3)]; thought.classList.add('show'); beep(280, .12); setTimeout(() => thought.classList.remove('show'), 1800); });
+const dogLines = [
+  'I packed the snacks, so we can explore Mars together.',
+  'I am ready for the launch, Johnny. Please save me a window seat.',
+  'I wonder whether Mars has a cozy place where I can take a nap.'
+];
+let dogLine = 0;
+let dogTalkTimer;
+function talkWithDog() {
+  const thought = $('#thought');
+  thought.textContent = dogLines[dogLine % dogLines.length];
+  dogLine += 1;
+  thought.classList.remove('show');
+  dog.classList.remove('talking');
+  void thought.offsetWidth;
+  void dog.offsetWidth;
+  thought.classList.add('show');
+  dog.classList.add('talking');
+  clearTimeout(dogTalkTimer);
+  dogTalkTimer = setTimeout(() => { thought.classList.remove('show'); dog.classList.remove('talking'); }, 3600);
+  beep(280, .12);
+}
+dog.addEventListener('click', talkWithDog);
+dog.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); talkWithDog(); } });
 
 $('#explore-button').addEventListener('click', () => {
   $('#explore-message').textContent = 'A tiny Mars friend says, "Welcome, builders!"';
