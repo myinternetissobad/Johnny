@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffcf56" />
+  <title>Johnny Builds to Mars</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="storybook" aria-live="polite">
+    <section class="cover screen" id="cover" aria-labelledby="cover-title">
+      <div class="cover-stars" aria-hidden="true"></div>
+      <div class="cover-orbit orbit-one"></div><div class="cover-orbit orbit-two"></div>
+      <div class="planet mars-cover" aria-hidden="true"><span></span></div>
+      <div class="cover-earth" aria-hidden="true"><span></span><i></i></div>
+      <div class="cover-rocket" aria-hidden="true"><span class="cover-rocket-window"></span><i></i><b></b></div>
+      <div class="cover-copy">
+        <p class="eyebrow">Johnny's story begins here.</p>
+        <h1 id="cover-title">Johnny Builds<br /><span>to Mars</span></h1>
+        <p class="cover-subtitle">Johnny is a young builder who dreams of visiting the red planet with his brave dog.</p>
+        <button class="primary-button" id="start-button">Start the story</button>
+        <p class="tiny-note">Turn the pages and help Johnny build his rocket.</p>
+      </div>
+      <div class="astronaut-johnny" aria-hidden="true"><div class="helmet"></div><div class="body"></div><div class="boot boot-left"></div><div class="boot boot-right"></div></div>
+      <div class="dog dog-cover" aria-hidden="true"><div class="dog-ear left"></div><div class="dog-ear right"></div><div class="dog-head"><i></i><i></i><b></b></div><div class="dog-body"></div><div class="dog-tail"></div></div>
+      <footer class="cover-footer"><div class="dots" id="cover-dots"></div><button class="nav-button next" id="cover-next-button">Next page</button></footer>
+    </section>
+
+    <section class="book screen hidden" id="book" aria-label="Storybook">
+      <header class="book-header">
+        <div class="publisher-mark" aria-label="A Parker and Pine story"><span>PP</span><b>Parker &amp; Pine</b></div>
+        <button class="icon-button" id="home-button" aria-label="Back to cover">Cover</button>
+        <div class="progress-wrap"><span id="page-label">Page 1 of 6</span><div class="progress"><i id="progress-bar"></i></div></div>
+        <button class="icon-button" id="sound-button" aria-label="Toggle sound">Sound</button>
+      </header>
+
+      <div class="page-window">
+        <article class="story-page page-sky active" data-page="0">
+          <div class="page-art sky-art"><div class="moon"></div><div class="mars-tap" id="mars-tap" role="button" tabindex="0" aria-label="Tap Mars"><div class="planet mars"><span></span><span></span><span></span></div><em>tap Mars</em></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div><div class="hill hill-a"></div><div class="hill hill-b"></div><div class="house"><div class="roof"></div><div class="window"></div></div></div>
+          <div class="page-copy"><p class="page-kicker">One bright morning, Johnny looked up.</p><h2>He wondered about Mars.</h2><p>"What if I built a rocket and zoomed all the way to Mars?"</p><div class="hint">Tap the red planet to make it sparkle.</div></div>
+        </article>
+
+        <article class="story-page page-supplies" data-page="1">
+          <div class="page-art garage-art"><div class="garage-sign">JOHNNY'S<br /><small>BUILD SHOP</small></div><div class="tool-shelf"><span>TOOLS</span></div><div class="supply supply-fuel" draggable="true" data-item="fuel" role="button" tabindex="0" aria-label="Drag the fuel canister to the packing basket"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M31 22h38v10H31z" fill="#34466d"/><path d="M24 31h52v51c0 7-5 12-12 12H36c-7 0-12-5-12-12V31Z" fill="#ef715f" stroke="#34466d" stroke-width="5"/><path d="M30 49h40v13H30z" fill="#ffd35a" stroke="#34466d" stroke-width="4"/><path d="M64 26v-8h12" fill="none" stroke="#34466d" stroke-width="5" stroke-linecap="round"/><circle cx="42" cy="73" r="5" fill="#ffd35a"/><circle cx="58" cy="73" r="5" fill="#ffd35a"/></svg><small>fuel</small></div><div class="supply supply-metal" draggable="true" data-item="metal" role="button" tabindex="0" aria-label="Drag the metal panel to the packing basket"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 24h64v53H18z" fill="#a7c3d1" stroke="#34466d" stroke-width="5"/><path d="m25 72 50-42M20 51l32-27M48 77l34-29" stroke="#effaff" stroke-width="5" opacity=".8"/><circle cx="28" cy="34" r="4" fill="#34466d"/><circle cx="72" cy="34" r="4" fill="#34466d"/><circle cx="28" cy="68" r="4" fill="#34466d"/><circle cx="72" cy="68" r="4" fill="#34466d"/></svg><small>metal</small></div><div class="supply supply-snacks" draggable="true" data-item="snacks" role="button" tabindex="0" aria-label="Drag the snack pack to the packing basket"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="m25 21 50 5-5 61-50-5z" fill="#f5a14d" stroke="#34466d" stroke-width="5"/><path d="m25 21 50 5-2 17-50-5z" fill="#ffd35a" stroke="#34466d" stroke-width="4"/><path d="M37 53c6-12 13 12 20 0s13 12 20 0" fill="none" stroke="#ef715f" stroke-width="6" stroke-linecap="round"/><circle cx="40" cy="70" r="5" fill="#ffe8a3"/><circle cx="58" cy="73" r="5" fill="#ffe8a3"/></svg><small>snacks</small></div><div class="supply-box" id="supply-box"><span>DROP SUPPLIES<br />HERE</span><div class="packed-icons" id="packed-icons" aria-hidden="true"></div><i></i></div></div>
+          <div class="page-copy"><p class="page-kicker">Before he could leave, Johnny gathered what he needed.</p><h2>He packed fuel, metal, and snacks.</h2><p>Johnny knew that every space builder needs supplies for the journey home.</p><div class="hint">Drag each item into the supply box.</div><div class="collection" id="collection" aria-live="polite">0 / 3 packed</div></div>
+        </article>
+
+        <article class="story-page page-build" data-page="2">
+          <div class="page-art build-art">
+            <div class="draw-slide" id="draw-slide"><div class="blueprint blueprint-draw">MY ROCKET<br /><small>JOHNNY'S PLAN</small></div><div class="sketch-board"><label class="sketch-card active"><b>Nose</b><canvas class="part-canvas" data-part="nose" width="180" height="150" aria-label="Sketch the rocket nose"></canvas></label><label class="sketch-card"><b>Wing</b><canvas class="part-canvas" data-part="wing" width="180" height="150" aria-label="Sketch the rocket wing"></canvas></label><label class="sketch-card"><b>Window</b><canvas class="part-canvas" data-part="window" width="180" height="150" aria-label="Sketch the rocket window"></canvas></label></div><div class="draw-controls"><button class="draw-tool active" data-color="#fff8e8" aria-label="Use white chalk">White</button><button class="draw-tool" data-color="#ffcf57" aria-label="Use yellow chalk">Yellow</button><button class="draw-tool" data-color="#ff7162" aria-label="Use red chalk">Red</button><button id="clear-blueprint">Clear sketches</button></div><div class="sketch-progress" id="sketch-progress">0 / 3 parts sketched</div><button class="use-sketch-button" id="use-sketch" disabled>Use my three sketches</button></div>
+            <div class="assemble-slide hidden" id="assemble-slide"><div class="blueprint carried-blueprint"><div class="carried-sketches"><figure><img id="carried-nose" alt="Your nose sketch" /><figcaption>Nose</figcaption></figure><figure><img id="carried-wing" alt="Your wing sketch" /><figcaption>Wing</figcaption></figure><figure><img id="carried-window" alt="Your window sketch" /><figcaption>Window</figcaption></figure></div><small>YOUR THREE SKETCHES</small></div><div class="rocket-stage"><div class="rocket-body" id="rocket-body"><div class="window"></div><div class="fin fin-left"></div><div class="fin fin-right"></div><div class="flame"></div></div><div class="rocket-base"></div><div class="part-target target-nose" data-target="nose"><img class="placed-drawing" id="placed-nose" alt="Placed nose drawing" /></div><div class="part-target target-wing" data-target="wing"><img class="placed-drawing" id="placed-wing" alt="Placed wing drawing" /></div><div class="part-target target-window" data-target="window"><img class="placed-drawing" id="placed-window" alt="Placed window drawing" /></div></div><button class="build-part part-one" draggable="true" data-part="nose" aria-label="Drag your nose drawing into place"><img class="drag-sketch" id="drag-nose" alt="Your nose drawing" /><span>Nose</span></button><button class="build-part part-two" draggable="true" data-part="wing" aria-label="Drag your wing drawing into place"><img class="drag-sketch" id="drag-wing" alt="Your wing drawing" /><span>Wing</span></button><button class="build-part part-three" draggable="true" data-part="window" aria-label="Drag your window drawing into place"><img class="drag-sketch" id="drag-window" alt="Your window drawing" /><span>Window</span></button><div class="sparkle s1"></div><div class="sparkle s2"></div></div>
+          </div>
+          <div class="page-copy draw-copy" id="draw-copy"><p class="page-kicker">Before Johnny built, he drew.</p><h2>Sketch your rocket.</h2><p>Draw a rocket on the blueprint. Your sketch will travel to the next slide with the real rocket.</p><div class="hint">Use your finger or mouse like a pencil.</div></div>
+          <div class="page-copy assemble-copy hidden" id="assemble-copy"><p class="page-kicker">Johnny followed your plan.</p><h2>Build the rocket.</h2><p>Drag each part into its matching outline. Your blueprint stays beside the rocket as you build.</p><div class="hint">Drag the parts into place.</div><div class="collection" id="build-count">0 / 3 built</div></div>
+        </article>
+
+        <article class="story-page page-dog" data-page="3">
+          <div class="page-art dog-art"><div class="window-round"><div class="tiny-planet"></div></div><div class="cushion"></div><div class="dog dog-page" id="dog-tap" role="button" tabindex="0" aria-label="Tap the dog"><div class="dog-ear left"></div><div class="dog-ear right"></div><div class="dog-head"><i></i><i></i><b></b></div><div class="dog-body"></div><div class="dog-tail"></div><div class="dog-paw"></div></div><div class="thought" id="thought">Ready?</div></div>
+          <div class="page-copy"><p class="page-kicker">Every explorer needs a friend.</p><h2>"Are you coming, Biscuit?"</h2><p>Biscuit wagged his tail. He had been waiting for this adventure his whole life.</p><div class="hint">Tap Biscuit for a pep talk.</div></div>
+        </article>
+
+        <article class="story-page page-launch" data-page="4">
+          <div class="page-art launch-art"><div class="stars-far"></div><div class="launch-pad"></div><div class="rocket-ready" id="rocket-ready"><div class="rocket-window"></div><div class="rocket-fin left"></div><div class="rocket-fin right"></div><div class="rocket-flame"></div></div><div class="countdown" id="countdown">READY</div><div class="launch-smoke"></div></div>
+          <div class="page-copy"><p class="page-kicker">The countdown is ready.</p><h2>Johnny and Biscuit prepared for launch.</h2><p>They buckled in tightly while the stars waited above them.</p><p class="rocket-status" id="rocket-status">The rocket is waiting for its final parts.</p><button class="launch-button" id="launch-button">Hold to launch</button><div class="hint">Press and hold the button until the rocket lifts off.</div></div>
+        </article>
+
+        <article class="story-page page-mars" data-page="5">
+          <div class="page-art mars-art"><div class="mars-big"><span></span><span></span><span></span><i></i></div><div class="flag"><b>JOHNNY<br />+ BISCUIT</b></div><div class="mars-supply-crate" id="mars-supply-crate"><b>TRIP SUPPLIES</b><span id="mars-supply-count">0 / 3 arrived</span></div><div class="mars-ground"></div><div class="mars-rock rock-one"></div><div class="mars-rock rock-two"></div><div class="alien alien-one" aria-hidden="true"></div><div class="alien alien-two" aria-hidden="true"></div></div>
+          <div class="page-copy"><p class="page-kicker">At last, they reached Mars.</p><h2>They made it.</h2><p>Johnny planted a flag. Biscuit bounced. Together, they wondered what to build next.</p><button class="explore-button" id="explore-button">Explore Mars</button><p class="explore-message" id="explore-message" aria-live="polite"></p><button class="primary-button replay-button" id="replay-button">Read it again</button></div>
+        </article>
+      </div>
+
+      <footer class="book-footer"><button class="nav-button" id="back-button" disabled>Back</button><div class="dots" id="dots"></div><button class="nav-button next" id="next-button">Next page</button></footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
