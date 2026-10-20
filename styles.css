@@ -62,3 +62,7 @@ body{background:#11183f;color:#fff}.storybook{max-width:1280px;background:#17204
 .dog-page.talking{animation:dog-talk .55s ease-in-out 2}
 @keyframes thought-pop{from{opacity:0;transform:translateY(8px) scale(.78)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes dog-talk{0%,100%{filter:none}50%{filter:brightness(1.12) drop-shadow(0 0 12px #ffd35a99)}}
+.thought{left:44%;bottom:43%;z-index:5}
+.thought:after{content:"";position:absolute;left:-17px;bottom:18px;width:28px;height:24px;background:#fff;border-left:3px solid #8b5c69;border-bottom:3px solid #8b5c69;clip-path:polygon(100% 0,100% 100%,0 70%)}
+.dog-talk-target{position:absolute;left:27%;bottom:16%;z-index:6;width:260px;height:270px;border:0;padding:0;background:transparent;cursor:pointer;appearance:none}
+.dog-talk-target:focus-visible{outline:4px solid #ffd35a;outline-offset:6px;border-radius:28px}

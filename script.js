@@ -149,8 +149,17 @@ function talkWithDog() {
   dogTalkTimer = setTimeout(() => { thought.classList.remove('show'); dog.classList.remove('talking'); }, 3600);
   beep(280, .12);
 }
-dog.addEventListener('click', talkWithDog);
-dog.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); talkWithDog(); } });
+let lastDogTalk = 0;
+function triggerDogTalk(event) {
+  if (event.type === 'mousedown' && event.button !== 0) return;
+  const now = Date.now();
+  if (now - lastDogTalk < 250) return;
+  lastDogTalk = now;
+  talkWithDog();
+}
+dog.addEventListener('pointerdown', triggerDogTalk);
+dog.addEventListener('mousedown', triggerDogTalk);
+dog.addEventListener('click', triggerDogTalk);
 
 $('#explore-button').addEventListener('click', () => {
   $('#explore-message').textContent = 'A tiny Mars friend says, "Welcome, builders!"';
